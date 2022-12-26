@@ -1,0 +1,7 @@
+FROM ubuntu 
+RUN apt update -y
+RUN apt install apache2 -y
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page286/denom.zip /tmp
+COPY /tmp /var/www/html/
+EXPOSE 80
+CMD [“apachectl”, “-D”, “FOREGROUND”]
